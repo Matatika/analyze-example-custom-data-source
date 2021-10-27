@@ -18,6 +18,7 @@ extractors:
   - name: tap-example-custom-data-source
     namespace: tap_example_custom_data_source
     pip_url: git+https://github.com/ets/tap-spreadsheets-anywhere.git
+    executable: tap-spreadsheets-anywhere
     capabilities:
       - catalog
       - discover

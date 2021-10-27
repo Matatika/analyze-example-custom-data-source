@@ -1,0 +1,32 @@
+version: datasets/v0.2
+source: example-custom-data-source
+title: Top 5 Oldest Films in the IMDB Top 20 Rated Films
+questions: What are the top 5 oldest films in the imdb top 20 rated films?
+description: |-
+  Top 5 oldest films in the IMDB top 20 rated films.
+
+  #top5
+metadata: |-
+  {
+    "name": "imdb_top_20_films",
+    "label": "Top 5 rated IMDB films", 
+    "related_table": {
+      "columns": [
+        {"name": "rank", "label": "Rank", "description": "Rank"}, 
+        {"name": "title", "label": "Title", "description": "Title"},
+        {"name": "imdb_rating", "label": "IMDB Rating", "description": "IMDB Rating"},
+        {"name": "release_year", "label": "Release Year", "description": "Release Year"}
+      ]
+    }
+  }
+visualisation: '{"google-chart": {"chartType": "Table"}}'
+query: |-
+  SELECT
+    rank
+    , title
+    , imdb_rating
+    , release_year
+  FROM imdb_top_20_films
+  ORDER BY release_year ASC
+  LIMIT 5
+

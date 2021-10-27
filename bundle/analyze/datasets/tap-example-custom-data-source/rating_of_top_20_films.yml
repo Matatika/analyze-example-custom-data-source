@@ -1,0 +1,42 @@
+version: datasets/v0.2
+source: example-custom-data-source
+title: Ratings of Top 20 IMDB Films
+questions: What are the ratings of the top 20 imdb films?
+description: |-
+  Ratings of the top 20 imdb films.
+
+  #top20
+metadata: |-
+  {
+    "name": "imdb_top_20_films",
+    "label": "Top 5 rated IMDB films", 
+    "related_table": {
+      "columns": [
+        {"name": "title", "label": "Title", "description": "Title"}
+      ],
+      "aggregates": [
+        {"name": "imdb_rating", "label": "IMDB Rating", "description": "IMDB Rating"}
+      ]
+    }
+  }
+visualisation: |-
+  {"chartjs-chart": 
+    {"chartType": "line", 
+      "options": {
+        "scales": {
+          "yAxes": [{
+            "ticks": {
+              "beginAtZero": true
+            }
+          }]
+        }
+      }
+    }
+  }
+query: |-
+  SELECT
+    title "imdb_top_20_films.title"
+    , imdb_rating "imdb_top_20_films.imdb_rating"
+  FROM imdb_top_20_films
+  ORDER BY rank ASC
+  LIMIT 20
