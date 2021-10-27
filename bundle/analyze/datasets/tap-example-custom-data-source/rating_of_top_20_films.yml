@@ -19,20 +19,7 @@ metadata: |-
       ]
     }
   }
-visualisation: |-
-  {"chartjs-chart": 
-    {"chartType": "line", 
-      "options": {
-        "scales": {
-          "yAxes": [{
-            "ticks": {
-              "beginAtZero": true
-            }
-          }]
-        }
-      }
-    }
-  }
+visualisation: '{"chartjs-chart":{"chartType": "line"}}''
 query: |-
   SELECT
     title "imdb_top_20_films.title"
