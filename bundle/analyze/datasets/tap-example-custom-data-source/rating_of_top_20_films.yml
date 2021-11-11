@@ -4,7 +4,7 @@ title: Ratings of Top 20 IMDB Films
 questions: What are the ratings of the top 20 imdb films?
 description: |-
   Ratings of the top 20 imdb films.
-
+  
   #top20
 metadata: |-
   {
@@ -19,7 +19,7 @@ metadata: |-
       ]
     }
   }
-visualisation: '{"chartjs-chart":{"chartType": "line"}}''
+visualisation: '{"chartjs-chart":{"chartType": "line"}}'
 query: |-
   SELECT
     title "imdb_top_20_films.title"
